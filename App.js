@@ -1,5 +1,5 @@
 import { View } from 'react-native';
-import Cesta from './scr/Telas/Cesta';
+import Cesta from './src/telas/Cesta';
 import {SafeAreaView } from 'react-native-web';
 
 import  {
@@ -9,16 +9,15 @@ import  {
       } from '@expo-google-fonts/montserrat';
 
 export default function App() {
- const [fontCarregada] = useFonts({
-   "Montserratregular": Montserrat_400Regular,
-   "MontserratBold": Montserrat_700bold
+  const [fontCarregada] = useFonts({
+  "Montserratregular": Montserrat_400Regular,
+  "MontserratBold": Montserrat_700bold
  });
 
 
- if(!fontCarregada){
-   return<view />
- }
-
+  if (!fontCarregada) {
+    return <View />;
+  }
 
  return (
    <SafeAreaView>

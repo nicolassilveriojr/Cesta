@@ -1,87 +1,89 @@
-import React from "react";
-import { Text,Image, Dimensions,StyleSheet,View } from "react-native";
+import React from 'react';
+import { Image, Dimensions, StyleSheet, View } from 'react-native';
+
+import Texto from './COMPONENTE/Texto'; 
 
 import topo from '../../assets/topo.png';
 import logo from '../../assets/logo.png';
 
 const width = Dimensions.get('screen').width;
 
-export default function Cesta(){
-   return<>
-   <Image source={topo} style={estilos.topo} />
-    <Text style={estilos.titulo}>Detalhes da cesta</Text>
-    <Text style={estilos.nome}>Cesta de verduras</Text>
+export default function Cesta() {
+  return (
+    <>
+      <Image source={topo} style={estilos.topo} />
 
-    <View style={estilos.fazenda}> 
-    <Image source={logo} style={estilos.imagemFazenda} /> 
-    <Text style={estilos.nomeFazenda}>Jenny Jack Farm</Text>
-    </View>
+      <Texto style={estilos.titulo}>Detalhes da cesta</Texto>
 
-    <Text style={estilos.descricao}>Uma cesta com produtos selecionados cuidadosamente da fazenda direto para sua cozinha.</Text>
-    <Text style={estilos.preco}>R$ 40,00</Text>
+      <View style={estilos.cesta}>
+        <Texto style={estilos.nome}>Cesta de verduras</Texto>
 
+        <View style={estilos.fazenda}>
+          <Image source={logo} style={estilos.imagemFazenda} />
+          <Texto style={estilos.nomeFazenda}>Jenny Jack Farm</Texto>
+        </View>
 
-   </>
+        <Texto style={estilos.descricao}>
+          Uma cesta com produtos selecionados cuidadosamente da fazenda para sua cozinha.
+        </Texto>
+
+        <Texto style={estilos.preco}>R$ 40,00</Texto>
+      </View>
+    </>
+  );
 }
 
 const estilos = StyleSheet.create({
-topo:{
-    width:"100%",
-    height: 578 / 768 * width
-},
-titulo:{
-    width: "100%",
-    position: "absolute",
-    textAlign: "center",
+  topo: {
+    width: '100%',
+    height: 578 / 768 * width, 
+  },
+  titulo: {
+    width: '100%',
+    position: 'absolute',
+    textAlign: 'center',
     fontSize: 16,
     lineHeight: 26,
-    color: "white",
-    fontWeight: "bold",
+    color: 'white',
+    fontWeight: 'bold',
     padding: 16,
-    fontFamily: "MontserratBold",
-},
-Cesta:{
+  },
+  cesta: {
     paddingVertical: 8,
     paddingHorizontal: 16,
-},
-nome:{
+  },
+  nome: {
+    color: '#464646',
     fontSize: 26,
     lineHeight: 42,
-    color: "#464646",
-    fontWeight: "bold",
-    fontFamily: "MontserratBold",
-
-},
-fazenda:{
-    flexDirection: "row",
+    fontWeight: 'bold',
+  },
+  fazenda: {
+    flexDirection: 'row',
     paddingVertical: 12,
-},
-imagemFazenda:{
+    alignItems: 'center', 
+  },
+  imagemFazenda: {
     width: 32,
     height: 32,
-    borderRadius: 16,
-},
-
-nomeFazenda:{
+  },
+  nomeFazenda: {
     fontSize: 16,
     lineHeight: 26,
-    fontFamily: "MontserratRegular",
-
-},
-descricao:{
-    color: "#A3A3A3",
+    marginLeft: 12,
+    fontWeight: 'bold',
+  },
+  descricao: {
+    color: '#A3A3A3',
     fontSize: 16,
     lineHeight: 26,
-    fontFamily: "MontserratRegular",
-},
-preco:{
-    color: "#2A9F85",
-    fontWeight: "bold",
+    marginTop: 8,
+  },
+  preco: {
+    color: '#2A9F85',
+    fontWeight: 'bold',
     fontSize: 26,
     lineHeight: 42,
     marginTop: 8,
-},
-
-
-
-})
+  }
+});
